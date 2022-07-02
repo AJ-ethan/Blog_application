@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<p> heloo </p>
+	{% for p in post %}
+	    <li> {{ p }} </li>
+	    <li><a href="{{ post.get_absolute_url }}">{{ p }}</a>
+	{% endfor %}
+</body>
+</html>
+

@@ -1,0 +1,1 @@
+this file ensures that learing_log?static/ will e upadted 

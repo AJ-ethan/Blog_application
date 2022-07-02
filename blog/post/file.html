@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block title %}My blog{% endblock %}
+
+{% block content %}
+   <h1>My Blog</h1>
+  <p> <a href="{% url 'blog:post_postDetail'%}">ADD BLOG
+	</a>
+   </p>
+   {% for post in posts %}
+    <div class="panel panel-default">
+      <div class= "panel-heading">
+      <h2>
+   	    <a href ="{{ post.get_absolute_url }}">{{ post.title }}
+      </a>
+   </h2></div>
+   <div class = "panel-body">
+   <p>
+     Publsished {{ post.publish }} by {{ post.author }}
+     </p>
+     {{ post.body|truncatewords:30|linebreaks }}
+     </div>
+   </div>
+     {% endfor %}
+   
+
+     {% include "blog/post/pagination.html" with page=posts %}
+{% endblock %}
